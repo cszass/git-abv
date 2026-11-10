@@ -9,7 +9,7 @@ Thanks for stopping by the bar. Three kinds of help are especially welcome:
 Everything runs on plain Node.js (18 or newer) with **zero dependencies**. There is no build step.
 
 ```bash
-git clone https://github.com/YOUR_GITHUB_USERNAME/git-abv
+git clone https://github.com/cszass/git-abv
 cd git-abv
 node --test                 # the whole suite, a couple of seconds
 node bin/git-abv.js         # run it on its own history

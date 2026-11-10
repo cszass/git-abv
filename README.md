@@ -10,14 +10,14 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/YOUR_GITHUB_USERNAME/git-abv/actions/workflows/ci.yml"><img src="https://github.com/YOUR_GITHUB_USERNAME/git-abv/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="https://github.com/cszass/git-abv/actions/workflows/ci.yml"><img src="https://github.com/cszass/git-abv/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
   <img src="abv-badge.svg" alt="This repo's own AI by volume">
   <img src="https://img.shields.io/badge/dependencies-0-brightgreen" alt="zero dependencies">
   <img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT license">
 </p>
 
 <p align="center">
-  <a href="https://YOUR_GITHUB_USERNAME.github.io/git-abv/"><b>Try it in your browser</b></a> ·
+  <a href="https://cszass.github.io/git-abv/"><b>Try it in your browser</b></a> ·
   <a href="#the-top-shelf">The top shelf</a> ·
   <a href="SIGNATURES.md">What counts</a> ·
   <a href="README.zh-CN.md">简体中文</a>
@@ -150,7 +150,7 @@ Across these 48 projects, **40,346 of 359,305 commits (11.2%)** say they had AI 
 - **It rewards honesty.** A high number mostly means a project is open about how it is built. A low number means either little AI, or little disclosure. The table cannot tell which, and neither can anyone else.
 - **It is a floor.** Take [oven-sh/bun](https://github.com/oven-sh/bun), at 9.9%. One account, `robobun`, authored 62% of the commits in that window (2,860 of 4,615). From November to February, about nine in ten of its commits carried a Claude co-author trailer. From April to September, 0 of 2,453 did. Count that account as an agent (`--ai-identity '^robobun\b'`) and the same history reads **68.6%**.
 - **It is by commits.** Line counts need full clones, and the shelf is measured from commit metadata alone. Run `npx git-abv` in a real clone for the number by volume.
-- **Check our work.** `node scripts/top-shelf.mjs` reproduces the table. `git abv --explain` shows every signature that matched. The [web version](https://YOUR_GITHUB_USERNAME.github.io/git-abv/) pours any public repo live and links each commit that counted.
+- **Check our work.** `node scripts/top-shelf.mjs` reproduces the table. `git abv --explain` shows every signature that matched. The [web version](https://cszass.github.io/git-abv/) pours any public repo live and links each commit that counted.
 
 Want a repository on the shelf? Add it to [`scripts/top-shelf-repos.txt`](scripts/top-shelf-repos.txt) and open a PR.
 
@@ -280,7 +280,7 @@ jobs:
       - uses: actions/checkout@v5
         with:
           fetch-depth: 0          # the whole history, or the number is meaningless
-      - uses: YOUR_GITHUB_USERNAME/git-abv@main
+      - uses: cszass/git-abv@main
         with:
           badge: abv-badge.svg
           card: abv-label.svg     # optional
@@ -290,7 +290,7 @@ jobs:
 The action also writes a job summary, exposes `abv` and `style` as outputs, and can enforce a policy:
 
 ```yaml
-      - uses: YOUR_GITHUB_USERNAME/git-abv@main
+      - uses: cszass/git-abv@main
         with:
           max: 20                 # fail the job above 20% ABV. Or `min:`, if that is your kind of shop.
 ```
@@ -333,7 +333,7 @@ Please don't. It measures who lets their tools sign commits, which is mostly a s
 Then your tools are not signing. That is the point of the floor. Most agents add a trailer by default; some editors and most autocomplete never do.
 
 **A tool is missing, or something is miscounted.**
-Run `git abv --suspects`, then [open an issue](https://github.com/YOUR_GITHUB_USERNAME/git-abv/issues/new/choose) or send a PR. Adding a signature is usually one line plus a test.
+Run `git abv --suspects`, then [open an issue](https://github.com/cszass/git-abv/issues/new/choose) or send a PR. Adding a signature is usually one line plus a test.
 
 **Why "ABV"?**
 Because "percentage of added lines attributable to commits bearing an explicit AI authorship signature" does not fit on a badge.

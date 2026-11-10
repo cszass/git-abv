@@ -10,14 +10,14 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/YOUR_GITHUB_USERNAME/git-abv/actions/workflows/ci.yml"><img src="https://github.com/YOUR_GITHUB_USERNAME/git-abv/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="https://github.com/cszass/git-abv/actions/workflows/ci.yml"><img src="https://github.com/cszass/git-abv/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
   <img src="abv-badge.svg" alt="本仓库自己的含 AI 量">
   <img src="https://img.shields.io/badge/dependencies-0-brightgreen" alt="零依赖">
   <img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT 许可">
 </p>
 
 <p align="center">
-  <a href="https://YOUR_GITHUB_USERNAME.github.io/git-abv/"><b>在浏览器里直接试</b></a> ·
+  <a href="https://cszass.github.io/git-abv/"><b>在浏览器里直接试</b></a> ·
   <a href="#名酒榜">名酒榜</a> ·
   <a href="SIGNATURES.md">哪些算数</a> ·
   <a href="README.md">English</a>
@@ -150,7 +150,7 @@ git abv --card --theme night --lang zh  # 暗色、中文
 - **它奖励坦诚。** 度数高，多半说明项目对自己的开发方式很公开；度数低，要么是真的少用 AI，要么是用了没署名。这张表分不出来，别人也分不出来。
 - **它是下限。** 以 [oven-sh/bun](https://github.com/oven-sh/bun) 的 9.9% 为例：`robobun` 这一个账号贡献了这段时间 62% 的提交（4,615 个里的 2,860 个）。去年 11 月到今年 2 月，它的提交约九成带 Claude 署名；4 月到 9 月的 2,453 个提交里，一个都没有。如果把这个账号算作 Agent（`--ai-identity '^robobun\b'`），同一段历史测出来是 **68.6%**。
 - **它按提交数算。** 统计代码行需要完整克隆，而榜单只用了提交元数据。想要按代码量算的度数，克隆下来跑 `npx git-abv`。
-- **欢迎查账。** `node scripts/top-shelf.mjs` 可以复现整张表；`git abv --explain` 会列出每一个命中的签名；[网页版](https://YOUR_GITHUB_USERNAME.github.io/git-abv/)可以现场测任意公开仓库，并且给出每个被计入的提交的链接。
+- **欢迎查账。** `node scripts/top-shelf.mjs` 可以复现整张表；`git abv --explain` 会列出每一个命中的签名；[网页版](https://cszass.github.io/git-abv/)可以现场测任意公开仓库，并且给出每个被计入的提交的链接。
 
 想让某个仓库上榜？把它加进 [`scripts/top-shelf-repos.txt`](scripts/top-shelf-repos.txt)，提个 PR。
 
@@ -239,7 +239,7 @@ jobs:
       - uses: actions/checkout@v5
         with:
           fetch-depth: 0          # 要完整历史，否则数字没有意义
-      - uses: YOUR_GITHUB_USERNAME/git-abv@main
+      - uses: cszass/git-abv@main
         with:
           badge: abv-badge.svg
           card: abv-label.svg     # 可选
@@ -250,7 +250,7 @@ jobs:
 这个 Action 还会写一份 job summary，输出 `abv` 和 `style` 两个变量，并且可以执行项目规定：
 
 ```yaml
-      - uses: YOUR_GITHUB_USERNAME/git-abv@main
+      - uses: cszass/git-abv@main
         with:
           max: 20                 # 含 AI 量超过 20% 就让 CI 失败。也可以用 min，看你们是哪种团队。
 ```
@@ -295,7 +295,7 @@ jobs:
 说明你的工具没有署名，这正是"下限"的含义。多数 Agent 默认会加尾注；有些编辑器和几乎所有自动补全都不会。
 
 **有工具没被识别，或者统计错了。**
-先跑 `git abv --suspects`，然后[提 issue](https://github.com/YOUR_GITHUB_USERNAME/git-abv/issues/new/choose) 或者直接发 PR。加一条签名通常只要一行代码加一个测试。
+先跑 `git abv --suspects`，然后[提 issue](https://github.com/cszass/git-abv/issues/new/choose) 或者直接发 PR。加一条签名通常只要一行代码加一个测试。
 
 **为什么叫 ABV？**
 ABV 本来是酒精度（Alcohol By Volume）。53 度的白酒，53% 的含 AI 量，都是一口就上头的东西。

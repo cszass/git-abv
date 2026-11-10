@@ -1,5 +1,5 @@
 blank_issues_enabled: true
 contact_links:
   - name: How git-abv decides what counts
-    url: https://github.com/YOUR_GITHUB_USERNAME/git-abv/blob/main/SIGNATURES.md
+    url: https://github.com/cszass/git-abv/blob/main/SIGNATURES.md
     about: The full list of signatures, and what is deliberately not counted.

@@ -44,5 +44,13 @@
     "signatures:md": "node scripts/gen-signatures-md.mjs",
     "assets": "node scripts/gen-assets.mjs",
     "top-shelf": "node scripts/top-shelf.mjs && node scripts/readme-shelf.mjs"
+  },
+  "homepage": "https://cszass.github.io/git-abv/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cszass/git-abv.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cszass/git-abv/issues"
   }
 }

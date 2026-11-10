@@ -13,7 +13,7 @@ import { formatInt, formatPct } from './lib/format.js';
 import { styleName, t as coreText } from './lib/i18n.js';
 import { toolColor, toolName } from './lib/signatures.js';
 
-const PROJECT = 'YOUR_GITHUB_USERNAME/git-abv';
+const PROJECT = 'cszass/git-abv';
 const FALLBACK_EXAMPLES = ['oven-sh/bun', 'openai/codex', 'vercel/next.js'];
 const CACHE_MINUTES = 30;
 
