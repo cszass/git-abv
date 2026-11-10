@@ -1,0 +1,43 @@
+<!doctype html>
+<!--
+  Source for assets/social-preview.png (1280×640, the size GitHub asks for).
+  Render it with any Chromium:
+    chrome --headless=new --hide-scrollbars --window-size=1280,640 \
+           --screenshot=assets/social-preview.png scripts/social-preview.html
+-->
+<html lang="en">
+<meta charset="utf-8">
+<title>git-abv social preview</title>
+<style>
+  html, body { margin: 0; width: 1280px; height: 640px; overflow: hidden; }
+  body {
+    background: radial-gradient(90% 120% at 20% 0%, #1b2230 0%, #0b0e13 62%);
+    color: #efe7d6;
+    font-family: Georgia, 'Times New Roman', serif;
+    position: relative;
+  }
+  .copy { position: absolute; left: 64px; top: 70px; width: 470px; }
+  .eyebrow { font: 700 17px/1 'Helvetica Neue', Arial, sans-serif; letter-spacing: 6px; color: #ff7b54; }
+  h1 { margin: 26px 0 0; font-size: 82px; line-height: 0.98; letter-spacing: -2px; }
+  p { margin: 26px 0 0; font-size: 27px; line-height: 1.32; color: #b9b2a4; }
+  code {
+    position: absolute; left: 64px; bottom: 66px;
+    font: 700 28px/1 ui-monospace, Consolas, Menlo, monospace;
+    padding: 16px 22px; border: 2px solid #ff7b54; border-radius: 12px; color: #efe7d6;
+  }
+  code::before { content: '$ '; color: #ff7b54; }
+  .label {
+    position: absolute; right: -70px; top: 96px; width: 800px;
+    transform: rotate(-4deg);
+    border-radius: 10px;
+    box-shadow: 0 40px 90px rgba(0, 0, 0, 0.6);
+  }
+</style>
+<div class="copy">
+  <div class="eyebrow">AI BY VOLUME</div>
+  <h1>What's the ABV of your repo?</h1>
+  <p>How much of a codebase was written with AI, read straight from git.</p>
+</div>
+<code>npx git-abv</code>
+<img class="label" src="../assets/label-rocket.svg" alt="">
+</html>

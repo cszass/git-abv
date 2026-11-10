@@ -1,0 +1,47 @@
+name: Add or fix an AI signature
+description: A tool signs its commits in a way git-abv misses, or git-abv counts something it should not.
+title: 'signature: '
+labels: [signature]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks! The signature database is the heart of git-abv, and it only stays current with reports like this.
+        If you are up for it, a pull request against `src/core/signatures.js` is even better. See CONTRIBUTING.md.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What is wrong?
+      options:
+        - A tool's commits are not being counted (missing signature)
+        - Something is counted that should not be (false positive)
+    validations:
+      required: true
+  - type: input
+    id: tool
+    attributes:
+      label: Tool
+      placeholder: e.g. Cursor, Devin, an internal agent
+    validations:
+      required: true
+  - type: textarea
+    id: example
+    attributes:
+      label: What the commit looks like
+      description: Paste the author line and the trailers exactly as `git log --format=fuller` shows them. Redact anything private.
+      render: text
+      placeholder: |
+        Author: Some Agent <agent@example.com>
+
+            Fix the thing
+
+            Co-authored-by: Some Agent <agent@example.com>
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source
+      description: A link to the tool's docs, changelog, or a public commit that shows this signature.
+    validations:
+      required: false

@@ -1,0 +1,4 @@
+# Same line endings on every platform. The CLI entry point has a shebang, and the
+# GitHub Action runs bash, so a CRLF checkout on Windows must never reach the repo.
+* text=auto eol=lf
+*.png binary

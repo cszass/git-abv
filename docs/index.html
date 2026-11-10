@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>git-abv · AI By Volume</title>
+  <meta name="description" content="What's the ABV of your repo? Measure how much of any GitHub repository was written with AI, straight from its git history.">
+  <meta property="og:title" content="git-abv · AI By Volume">
+  <meta property="og:description" content="What's the ABV of your repo? Measure how much of any codebase was written with AI.">
+  <meta property="og:image" content="social-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="./" aria-label="git-abv home">
+      <span class="brand-mark" aria-hidden="true">%</span>
+      <span class="brand-name">git-abv</span>
+    </a>
+    <nav class="top-nav">
+      <button type="button" class="link-button" id="lang-toggle" aria-label="Switch language">中文</button>
+      <a class="github-link" id="github-link" href="https://github.com/YOUR_GITHUB_USERNAME/git-abv" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow" data-i18n="eyebrow">AI BY VOLUME</p>
+      <h1 data-i18n="heroTitle">What's the ABV of your repo?</h1>
+      <p class="lede" data-i18n="heroSub">How much of a codebase was written with AI, read straight from its git history.</p>
+
+      <form id="pour-form" class="pour" autocomplete="off">
+        <label class="visually-hidden" for="repo-input" data-i18n="placeholder">owner/repo or a GitHub URL</label>
+        <input id="repo-input" name="repo" type="text" inputmode="url" spellcheck="false" autocapitalize="off"
+               placeholder="owner/repo" data-i18n-placeholder="placeholder" required>
+        <select id="depth-select" name="depth" aria-label="Sample size">
+          <option value="300">300</option>
+          <option value="1000" selected>1,000</option>
+          <option value="3000">3,000</option>
+        </select>
+        <button type="submit" id="pour-button" data-i18n="pour">Pour</button>
+      </form>
+      <p class="examples"><span data-i18n="try">Try</span> <span id="example-chips"></span></p>
+      <p class="status" id="status" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="result" id="result" hidden>
+      <div class="label-frame">
+        <img id="label-image" alt="" width="1200" height="630">
+      </div>
+      <div class="actions">
+        <button type="button" id="download-png" data-i18n="downloadPng">Download PNG</button>
+        <button type="button" id="download-svg" class="secondary" data-i18n="downloadSvg">SVG</button>
+        <button type="button" id="download-badge" class="secondary" data-i18n="downloadBadge">README badge</button>
+        <button type="button" id="copy-link" class="secondary" data-i18n="copyLink">Copy link</button>
+        <button type="button" id="theme-toggle" class="secondary">Night label</button>
+      </div>
+      <p class="taste-note" id="taste-note"></p>
+      <div class="cli-inline">
+        <code id="cli-inline-code">npx git-abv</code>
+        <button type="button" class="copy" data-copy="#cli-inline-code" data-i18n="copy">Copy</button>
+      </div>
+
+      <div class="panels">
+        <section class="panel">
+          <h2 data-i18n="ingredients">Ingredients</h2>
+          <div id="ingredients" class="ingredients"></div>
+        </section>
+        <section class="panel">
+          <h2 data-i18n="receipts">The receipts</h2>
+          <p class="panel-sub" data-i18n="receiptsSub">Recent commits that counted, and the signature that gave each one away.</p>
+          <ol id="receipts" class="receipts"></ol>
+        </section>
+      </div>
+    </section>
+
+    <section class="shelf" id="shelf" hidden>
+      <h2 data-i18n="topShelf">The top shelf</h2>
+      <p class="section-sub" id="shelf-sub"></p>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th data-i18n="colRepo">Repository</th>
+              <th class="num" data-i18n="colAbv">ABV</th>
+              <th data-i18n="colStyle">Style</th>
+              <th class="num" data-i18n="colCommits">AI-signed commits</th>
+              <th data-i18n="colNose">On the nose</th>
+            </tr>
+          </thead>
+          <tbody id="shelf-body"></tbody>
+        </table>
+      </div>
+      <p class="fine" data-i18n="shelfFine">Counts explicit signatures only, so every number is a floor. Click a row to pour it live.</p>
+    </section>
+
+    <section class="how">
+      <h2 data-i18n="how">How it works</h2>
+      <div class="cards">
+        <article>
+          <h3 data-i18n="how1t">It reads signatures, not minds</h3>
+          <p data-i18n="how1">AI coding tools sign their work: a Co-authored-by trailer, a bot author, a marker in the message. git-abv knows how dozens of tools sign, and counts the commits that carry a signature.</p>
+        </article>
+        <article>
+          <h3 data-i18n="how2t">A floor, not a verdict</h3>
+          <p data-i18n="how2">Autocomplete and pasted chat answers leave no trace, and signatures can be switched off. The real number is at least this high. It says nothing about quality.</p>
+        </article>
+        <article>
+          <h3 data-i18n="how3t">Nothing leaves your machine</h3>
+          <p data-i18n="how3">The CLI reads your local git history and makes no network requests at all. This page talks to the public GitHub API from your browser, and to nothing else.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="cli">
+      <h2 data-i18n="cliTitle">Get the real number</h2>
+      <p class="section-sub" data-i18n="cliSub">By lines of code, across the whole history, on any repo. Private ones included.</p>
+      <div class="terminal">
+        <div class="terminal-bar"><span></span><span></span><span></span></div>
+        <pre><code id="cli-code">npx git-abv</code></pre>
+        <button type="button" class="copy" data-copy="#cli-code" data-i18n="copy">Copy</button>
+      </div>
+      <p class="fine" data-i18n="cliFine">Zero dependencies. Works on GitHub, GitLab, Bitbucket and that server under someone's desk.</p>
+    </section>
+
+    <details class="token">
+      <summary data-i18n="token">Hit the rate limit? Use a token</summary>
+      <p data-i18n="tokenHelp">Without a token GitHub allows 60 API requests an hour. A fine-grained token with read-only access to public repositories is enough. It is kept in this tab only and sent to api.github.com, nowhere else.</p>
+      <input id="token-input" type="password" autocomplete="off" spellcheck="false" placeholder="github_pat_…" aria-label="GitHub token">
+    </details>
+  </main>
+
+  <footer class="bottom">
+    <p><span data-i18n="footer">MIT licensed. Not affiliated with any AI vendor, or any distillery.</span></p>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

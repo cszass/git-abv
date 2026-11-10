@@ -1,0 +1,139 @@
+name: 'git-abv: AI By Volume'
+description: 'Measure how much of your repo was written with AI. Keeps a README badge and a shareable label up to date, and can gate CI on the number.'
+author: 'git-abv contributors'
+branding:
+  icon: 'percent'
+  color: 'orange'
+
+inputs:
+  badge:
+    description: 'Where to write the README badge (SVG). Leave empty to skip.'
+    required: false
+    default: 'abv-badge.svg'
+  card:
+    description: 'Where to write the shareable label (SVG). Leave empty to skip.'
+    required: false
+    default: ''
+  lang:
+    description: 'Language for the badge, label and summary: en or zh.'
+    required: false
+    default: 'en'
+  theme:
+    description: 'Label theme: paper or night.'
+    required: false
+    default: 'paper'
+  args:
+    description: 'Extra arguments passed to git-abv, e.g. "--since 2026-01-01 --exclude docs/".'
+    required: false
+    default: ''
+  max:
+    description: 'Fail the job if ABV is above this percentage.'
+    required: false
+    default: ''
+  min:
+    description: 'Fail the job if ABV is below this percentage.'
+    required: false
+    default: ''
+  commit:
+    description: 'Commit the generated files back to the current branch (needs "contents: write").'
+    required: false
+    default: 'false'
+  commit-message:
+    description: 'Commit message used when "commit" is true.'
+    required: false
+    default: 'chore: update ABV badge [skip ci]'
+
+outputs:
+  abv:
+    description: 'AI By Volume, as a percentage (e.g. 37.5).'
+    value: ${{ steps.measure.outputs.abv }}
+  style:
+    description: 'The drink style for that ABV (e.g. whisky).'
+    value: ${{ steps.measure.outputs.style }}
+  report:
+    description: 'Path to the full JSON report.'
+    value: ${{ steps.measure.outputs.report }}
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Measure
+      id: measure
+      shell: bash
+      # Inputs travel through the environment, never through string interpolation into the script.
+      env:
+        ABV_BADGE: ${{ inputs.badge }}
+        ABV_CARD: ${{ inputs.card }}
+        ABV_LANG: ${{ inputs.lang }}
+        ABV_THEME: ${{ inputs.theme }}
+        ABV_ARGS: ${{ inputs.args }}
+        ABV_MAX: ${{ inputs.max }}
+        ABV_MIN: ${{ inputs.min }}
+      run: |
+        set -euo pipefail
+        cli="$GITHUB_ACTION_PATH/bin/git-abv.js"
+        report="${RUNNER_TEMP:-/tmp}/git-abv-report.json"
+
+        if [ "$(git rev-parse --is-shallow-repository)" = "true" ]; then
+          echo "::warning title=git-abv::This is a shallow clone, so only part of the history is measured. Use actions/checkout with fetch-depth: 0."
+        fi
+
+        args=(--json --lang "$ABV_LANG" --theme "$ABV_THEME")
+        if [ -n "$ABV_BADGE" ]; then args+=("--badge=$ABV_BADGE"); fi
+        if [ -n "$ABV_CARD" ]; then args+=("--card=$ABV_CARD"); fi
+        # shellcheck disable=SC2206
+        extra=($ABV_ARGS)
+
+        node "$cli" "${args[@]}" "${extra[@]}" > "$report"
+
+        read_field() { node -e 'const r = JSON.parse(require("fs").readFileSync(process.argv[1], "utf8")); process.stdout.write(String(process.argv[2].split(".").reduce((o, k) => (o == null ? o : o[k]), r) ?? ""))' "$report" "$1"; }
+        abv="$(read_field abv)"
+        {
+          echo "abv=$abv"
+          echo "style=$(read_field style)"
+          echo "report=$report"
+        } >> "$GITHUB_OUTPUT"
+
+        {
+          echo "### git-abv: $abv% AI by volume ($(read_field styleName))"
+          echo
+          echo "| | AI-signed | Total | Share |"
+          echo "| --- | ---: | ---: | ---: |"
+          echo "| Lines added | $(read_field byLines.ai) | $(read_field byLines.total) | $(read_field byLines.aiShare)% |"
+          echo "| Commits | $(read_field byCommits.ai) | $(read_field byCommits.total) | $(read_field byCommits.aiShare)% |"
+          echo
+          echo "> $(read_field tastingNotes)"
+          echo
+          echo "<sub>Counts explicit AI signatures in git history. A floor, not a verdict.</sub>"
+        } >> "$GITHUB_STEP_SUMMARY"
+
+        above() { node -e 'process.exit(Number(process.argv[1]) > Number(process.argv[2]) ? 0 : 1)' "$1" "$2"; }
+        if [ -n "$ABV_MAX" ] && above "$abv" "$ABV_MAX"; then
+          echo "::error title=git-abv::ABV $abv% is above the allowed maximum of $ABV_MAX%."
+          exit 1
+        fi
+        if [ -n "$ABV_MIN" ] && above "$ABV_MIN" "$abv"; then
+          echo "::error title=git-abv::ABV $abv% is below the required minimum of $ABV_MIN%."
+          exit 1
+        fi
+
+    - name: Commit generated files
+      if: ${{ inputs.commit == 'true' }}
+      shell: bash
+      env:
+        ABV_BADGE: ${{ inputs.badge }}
+        ABV_CARD: ${{ inputs.card }}
+        ABV_COMMIT_MESSAGE: ${{ inputs.commit-message }}
+      run: |
+        set -euo pipefail
+        files=()
+        if [ -n "$ABV_BADGE" ]; then files+=("$ABV_BADGE"); fi
+        if [ -n "$ABV_CARD" ]; then files+=("$ABV_CARD"); fi
+        if [ "${#files[@]}" -eq 0 ]; then exit 0; fi
+        git add -- "${files[@]}"
+        if git diff --cached --quiet; then
+          echo "Badge and label are already up to date."
+          exit 0
+        fi
+        git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m "$ABV_COMMIT_MESSAGE"
+        git push

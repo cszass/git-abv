@@ -1,0 +1,1429 @@
+{
+  "measuredOn": "2026-11-10",
+  "since": "2025-11-10",
+  "metric": "commits",
+  "method": "Non-merge commits on the default branch since 2025-11-10 that carry an explicit AI signature. Measured with git-abv --fast.",
+  "repos": [
+    {
+      "repo": "Aider-AI/aider",
+      "abv": 85.23,
+      "style": "rectified",
+      "commits": 88,
+      "aiCommits": 75,
+      "botCommits": 0,
+      "authored": 74,
+      "topTool": "aider",
+      "tools": [
+        {
+          "id": "aider",
+          "commits": 74
+        },
+        {
+          "id": "claude",
+          "commits": 1
+        }
+      ]
+    },
+    {
+      "repo": "dotnet/runtime",
+      "abv": 51.84,
+      "style": "cask",
+      "commits": 6713,
+      "aiCommits": 3480,
+      "botCommits": 162,
+      "authored": 1049,
+      "topTool": "copilot",
+      "tools": [
+        {
+          "id": "copilot",
+          "commits": 3447.5
+        },
+        {
+          "id": "claude",
+          "commits": 26.5
+        },
+        {
+          "id": "cursor",
+          "commits": 6
+        }
+      ]
+    },
+    {
+      "repo": "OpenHands/OpenHands",
+      "abv": 50.06,
+      "style": "cask",
+      "commits": 3508,
+      "aiCommits": 1756,
+      "botCommits": 228,
+      "authored": 26,
+      "topTool": "openhands",
+      "tools": [
+        {
+          "id": "openhands",
+          "commits": 1508.17
+        },
+        {
+          "id": "claude",
+          "commits": 191.67
+        },
+        {
+          "id": "cursor",
+          "commits": 34.5
+        },
+        {
+          "id": "devin",
+          "commits": 14.67
+        },
+        {
+          "id": "codex",
+          "commits": 3.5
+        },
+        {
+          "id": "copilot",
+          "commits": 2
+        },
+        {
+          "id": "jules",
+          "commits": 1
+        },
+        {
+          "id": "coderabbit",
+          "commits": 0.5
+        }
+      ]
+    },
+    {
+      "repo": "microsoft/vscode",
+      "abv": 39.2,
+      "style": "whisky",
+      "commits": 24995,
+      "aiCommits": 9799,
+      "botCommits": 513,
+      "authored": 807,
+      "topTool": "copilot",
+      "tools": [
+        {
+          "id": "copilot",
+          "commits": 9722
+        },
+        {
+          "id": "claude",
+          "commits": 69.5
+        },
+        {
+          "id": "cursor",
+          "commits": 6.5
+        },
+        {
+          "id": "codex",
+          "commits": 1
+        }
+      ]
+    },
+    {
+      "repo": "n8n-io/n8n",
+      "abv": 36.4,
+      "style": "whisky",
+      "commits": 10680,
+      "aiCommits": 3887,
+      "botCommits": 423,
+      "authored": 12,
+      "topTool": "claude",
+      "tools": [
+        {
+          "id": "claude",
+          "commits": 3290.5
+        },
+        {
+          "id": "cursor",
+          "commits": 399.33
+        },
+        {
+          "id": "cubic",
+          "commits": 131.5
+        },
+        {
+          "id": "multica",
+          "commits": 38
+        },
+        {
+          "id": "aikido",
+          "commits": 11.5
+        },
+        {
+          "id": "copilot",
+          "commits": 7.67
+        },
+        {
+          "id": "codex",
+          "commits": 5
+        },
+        {
+          "id": "coderabbit",
+          "commits": 2
+        },
+        {
+          "id": "opencode",
+          "commits": 1
+        },
+        {
+          "id": "junie",
+          "commits": 0.5
+        }
+      ]
+    },
+    {
+      "repo": "continuedev/continue",
+      "abv": 25.89,
+      "style": "whisky",
+      "commits": 1120,
+      "aiCommits": 290,
+      "botCommits": 142,
+      "authored": 95,
+      "topTool": "claude",
+      "tools": [
+        {
+          "id": "claude",
+          "commits": 157
+        },
+        {
+          "id": "continue",
+          "commits": 102
+        },
+        {
+          "id": "cubic",
+          "commits": 19
+        },
+        {
+          "id": "cursor",
+          "commits": 10
+        },
+        {
+          "id": "amp",
+          "commits": 1
+        },
+        {
+          "id": "openhands",
+          "commits": 1
+        }
+      ]
+    },
+    {
+      "repo": "microsoft/TypeScript",
+      "abv": 21.65,
+      "style": "port",
+      "commits": 1875,
+      "aiCommits": 406,
+      "botCommits": 55,
+      "authored": 315,
+      "topTool": "copilot",
+      "tools": [
+        {
+          "id": "copilot",
+          "commits": 397
+        },
+        {
+          "id": "claude",
+          "commits": 7
+        },
+        {
+          "id": "codex",
+          "commits": 1
+        },
+        {
+          "id": "cursor",
+          "commits": 1
+        }
+      ]
+    },
+    {
+      "repo": "home-assistant/core",
+      "abv": 19.32,
+      "style": "port",
+      "commits": 22599,
+      "aiCommits": 4365,
+      "botCommits": 507,
+      "authored": 7,
+      "topTool": "claude",
+      "tools": [
+        {
+          "id": "claude",
+          "commits": 3171.5
+        },
+        {
+          "id": "copilot",
+          "commits": 1151.5
+        },
+        {
+          "id": "cursor",
+          "commits": 32.5
+        },
+        {
+          "id": "codex",
+          "commits": 5
+        },
+        {
+          "id": "multica",
+          "commits": 2
+        },
+        {
+          "id": "gemini",
+          "commits": 1
+        },
+        {
+          "id": "jules",
+          "commits": 1
+        },
+        {
+          "id": "junie",
+          "commits": 0.5
+        }
+      ]
+    },
+    {
+      "repo": "anomalyco/opencode",
+      "abv": 17.65,
+      "style": "port",
+      "commits": 18427,
+      "aiCommits": 3253,
+      "botCommits": 813,
+      "authored": 3124,
+      "topTool": "opencode",
+      "tools": [
+        {
+          "id": "opencode",
+          "commits": 3197
+        },
+        {
+          "id": "claude",
+          "commits": 38.5
+        },
+        {
+          "id": "copilot",
+          "commits": 12.5
+        },
+        {
+          "id": "cursor",
+          "commits": 3
+        },
+        {
+          "id": "greptile",
+          "commits": 2
+        }
+      ]
+    },
+    {
+      "repo": "nodejs/node",
+      "abv": 16.5,
+      "style": "port",
+      "commits": 3993,
+      "aiCommits": 659,
+      "botCommits": 484,
+      "authored": 0,
+      "topTool": "codex",
+      "tools": [
+        {
+          "id": "codex",
+          "commits": 252
+        },
+        {
+          "id": "opencode",
+          "commits": 182
+        },
+        {
+          "id": "claude",
+          "commits": 114
+        },
+        {
+          "id": "chatgpt",
+          "commits": 79
+        },
+        {
+          "id": "grok",
+          "commits": 12
+        },
+        {
+          "id": "copilot",
+          "commits": 10
+        },
+        {
+          "id": "cursor",
+          "commits": 6
+        },
+        {
+          "id": "amp",
+          "commits": 1
+        },
+        {
+          "id": "devin",
+          "commits": 1
+        },
+        {
+          "id": "gemini",
+          "commits": 1
+        },
+        {
+          "id": "other",
+          "commits": 1
+        }
+      ]
+    },
+    {
+      "repo": "denoland/deno",
+      "abv": 14.8,
+      "style": "wine",
+      "commits": 2905,
+      "aiCommits": 430,
+      "botCommits": 13,
+      "authored": 17,
+      "topTool": "claude",
+      "tools": [
+        {
+          "id": "claude",
+          "commits": 407.5
+        },
+        {
+          "id": "copilot",
+          "commits": 17.5
+        },
+        {
+          "id": "cursor",
+          "commits": 3
+        },
+        {
+          "id": "codex",
+          "commits": 2
+        }
+      ]
+    },
+    {
+      "repo": "tldraw/tldraw",
+      "abv": 12.62,
+      "style": "wine",
+      "commits": 1981,
+      "aiCommits": 250,
+      "botCommits": 84,
+      "authored": 0,
+      "topTool": "claude",
+      "tools": [
+        {
+          "id": "claude",
+          "commits": 221
+        },
+        {
+          "id": "cursor",
+          "commits": 21
+        },
+        {
+          "id": "copilot",
+          "commits": 8
+        }
+      ]
+    },
+    {
+      "repo": "supabase/supabase",
+      "abv": 10.77,
+      "style": "wine",
+      "commits": 6445,
+      "aiCommits": 694,
+      "botCommits": 210,
+      "authored": 86,
+      "topTool": "claude",
+      "tools": [
+        {
+          "id": "claude",
+          "commits": 549
+        },
+        {
+          "id": "cursor",
+          "commits": 55.5
+        },
+        {
+          "id": "copilot",
+          "commits": 46
+        },
+        {
+          "id": "coderabbit",
+          "commits": 40.5
+        },
+        {
+          "id": "codex",
+          "commits": 1
+        },
+        {
+          "id": "droid",
+          "commits": 1
+        },
+        {
+          "id": "other",
+          "commits": 1
+        }
+      ]
+    },
+    {
+      "repo": "oven-sh/bun",
+      "abv": 9.88,
+      "style": "wine",
+      "commits": 4615,
+      "aiCommits": 456,
+      "botCommits": 14,
+      "authored": 0,
+      "topTool": "claude",
+      "tools": [
+        {
+          "id": "claude",
+          "commits": 454.5
+        },
+        {
+          "id": "coderabbit",
+          "commits": 1.5
+        }
+      ]
+    },
+    {
+      "repo": "aaif-goose/goose",
+      "abv": 8.99,
+      "style": "wine",
+      "commits": 3180,
+      "aiCommits": 286,
+      "botCommits": 330,
+      "authored": 0,
+      "topTool": "claude",
+      "tools": [
+        {
+          "id": "claude",
+          "commits": 198.5
+        },
+        {
+          "id": "copilot",
+          "commits": 61.5
+        },
+        {
+          "id": "goose",
+          "commits": 10
+        },
+        {
+          "id": "cursor",
+          "commits": 7.5
+        },
+        {
+          "id": "amp",
+          "commits": 6
+        },
+        {
+          "id": "warp",
+          "commits": 2
+        },
+        {
+          "id": "codex",
+          "commits": 0.5
+        }
+      ]
+    },
+    {
+      "repo": "huggingface/transformers",
+      "abv": 8.87,
+      "style": "wine",
+      "commits": 3641,
+      "aiCommits": 323,
+      "botCommits": 41,
+      "authored": 0,
+      "topTool": "claude",
+      "tools": [
+        {
+          "id": "claude",
+          "commits": 307.5
+        },
+        {
+          "id": "cursor",
+          "commits": 7
+        },
+        {
+          "id": "copilot",
+          "commits": 6.5
+        },
+        {
+          "id": "codex",
+          "commits": 2
+        }
+      ]
+    },
+    {
+      "repo": "rails/rails",
+      "abv": 8.34,
+      "style": "wine",
+      "commits": 2625,
+      "aiCommits": 219,
+      "botCommits": 0,
+      "authored": 1,
+      "topTool": "claude",
+      "tools": [
+        {
+          "id": "claude",
+          "commits": 215
+        },
+        {
+          "id": "amp",
+          "commits": 2
+        },
+        {
+          "id": "copilot",
+          "commits": 1
+        },
+        {
+          "id": "cursor",
+          "commits": 1
+        }
+      ]
+    },
+    {
+      "repo": "python/cpython",
+      "abv": 8,
+      "style": "wine",
+      "commits": 5198,
+      "aiCommits": 416,
+      "botCommits": 10,
+      "authored": 0,
+      "topTool": "claude",
+      "tools": [
+        {
+          "id": "claude",
+          "commits": 413
+        },
+        {
+          "id": "copilot",
+          "commits": 2
+        },
+        {
+          "id": "codex",
+          "commits": 1
+        }
+      ]
+    },
+    {
+      "repo": "cloudflare/workers-sdk",
+      "abv": 6.99,
+      "style": "lager",
+      "commits": 2760,
+      "aiCommits": 193,
+      "botCommits": 581,
+      "authored": 3,
+      "topTool": "devin",
+      "tools": [
+        {
+          "id": "devin",
+          "commits": 132
+        },
+        {
+          "id": "claude",
+          "commits": 49
+        },
+        {
+          "id": "copilot",
+          "commits": 4.5
+        },
+        {
+          "id": "cursor",
+          "commits": 4
+        },
+        {
+          "id": "amp",
+          "commits": 1
+        },
+        {
+          "id": "charlie",
+          "commits": 1
+        },
+        {
+          "id": "opencode",
+          "commits": 1
+        },
+        {
+          "id": "chatgpt",
+          "commits": 0.5
+        }
+      ]
+    },
+    {
+      "repo": "torvalds/linux",
+      "abv": 6.71,
+      "style": "lager",
+      "commits": 91739,
+      "aiCommits": 6157,
+      "botCommits": 0,
+      "authored": 0,
+      "topTool": "claude",
+      "tools": [
+        {
+          "id": "claude",
+          "commits": 1842.72
+        },
+        {
+          "id": "other",
+          "commits": 1833
+        },
+        {
+          "id": "copilot",
+          "commits": 700
+        },
+        {
+          "id": "codex",
+          "commits": 561.17
+        },
+        {
+          "id": "antigravity",
+          "commits": 343.33
+        },
+        {
+          "id": "gemini",
+          "commits": 249.8
+        },
+        {
+          "id": "opencode",
+          "commits": 206.5
+        },
+        {
+          "id": "cursor",
+          "commits": 171.5
+        },
+        {
+          "id": "chatgpt",
+          "commits": 81.05
+        },
+        {
+          "id": "deepseek",
+          "commits": 53.05
+        },
+        {
+          "id": "glm",
+          "commits": 41.5
+        },
+        {
+          "id": "kiro",
+          "commits": 30
+        },
+        {
+          "id": "kimi",
+          "commits": 12.88
+        },
+        {
+          "id": "qoder",
+          "commits": 12.5
+        },
+        {
+          "id": "codebuddy",
+          "commits": 6
+        },
+        {
+          "id": "grok",
+          "commits": 4
+        },
+        {
+          "id": "openclaw",
+          "commits": 3
+        },
+        {
+          "id": "qwen",
+          "commits": 2
+        },
+        {
+          "id": "trae",
+          "commits": 2
+        },
+        {
+          "id": "cline",
+          "commits": 1
+        }
+      ]
+    },
+    {
+      "repo": "react/react",
+      "abv": 6.56,
+      "style": "lager",
+      "commits": 610,
+      "aiCommits": 40,
+      "botCommits": 5,
+      "authored": 0,
+      "topTool": "claude",
+      "tools": [
+        {
+          "id": "claude",
+          "commits": 35.5
+        },
+        {
+          "id": "cursor",
+          "commits": 2.5
+        },
+        {
+          "id": "amp",
+          "commits": 1
+        },
+        {
+          "id": "codex",
+          "commits": 1
+        }
+      ]
+    },
+    {
+      "repo": "cline/cline",
+      "abv": 6.16,
+      "style": "lager",
+      "commits": 3735,
+      "aiCommits": 230,
+      "botCommits": 47,
+      "authored": 8,
+      "topTool": "claude",
+      "tools": [
+        {
+          "id": "claude",
+          "commits": 69
+        },
+        {
+          "id": "cursor",
+          "commits": 49
+        },
+        {
+          "id": "greptile",
+          "commits": 35
+        },
+        {
+          "id": "cline",
+          "commits": 32
+        },
+        {
+          "id": "copilot",
+          "commits": 25
+        },
+        {
+          "id": "ellipsis",
+          "commits": 13
+        },
+        {
+          "id": "aikido",
+          "commits": 6
+        },
+        {
+          "id": "codex",
+          "commits": 1
+        }
+      ]
+    },
+    {
+      "repo": "vercel/next.js",
+      "abv": 5.73,
+      "style": "lager",
+      "commits": 5060,
+      "aiCommits": 290,
+      "botCommits": 694,
+      "authored": 1,
+      "topTool": "claude",
+      "tools": [
+        {
+          "id": "claude",
+          "commits": 232.5
+        },
+        {
+          "id": "cursor",
+          "commits": 52.5
+        },
+        {
+          "id": "copilot",
+          "commits": 5
+        }
+      ]
+    },
+    {
+      "repo": "langchain-ai/langchain",
+      "abv": 5.38,
+      "style": "lager",
+      "commits": 2416,
+      "aiCommits": 130,
+      "botCommits": 868,
+      "authored": 8,
+      "topTool": "openswe",
+      "tools": [
+        {
+          "id": "openswe",
+          "commits": 105
+        },
+        {
+          "id": "claude",
+          "commits": 20
+        },
+        {
+          "id": "copilot",
+          "commits": 5
+        }
+      ]
+    },
+    {
+      "repo": "tailwindlabs/tailwindcss",
+      "abv": 5.22,
+      "style": "lager",
+      "commits": 402,
+      "aiCommits": 21,
+      "botCommits": 67,
+      "authored": 0,
+      "topTool": "claude",
+      "tools": [
+        {
+          "id": "claude",
+          "commits": 13.5
+        },
+        {
+          "id": "greptile",
+          "commits": 5.5
+        },
+        {
+          "id": "coderabbit",
+          "commits": 1
+        },
+        {
+          "id": "codex",
+          "commits": 1
+        }
+      ]
+    },
+    {
+      "repo": "pytorch/pytorch",
+      "abv": 5.19,
+      "style": "lager",
+      "commits": 18182,
+      "aiCommits": 943,
+      "botCommits": 2113,
+      "authored": 5,
+      "topTool": "claude",
+      "tools": [
+        {
+          "id": "claude",
+          "commits": 794
+        },
+        {
+          "id": "cursor",
+          "commits": 71.5
+        },
+        {
+          "id": "copilot",
+          "commits": 58.5
+        },
+        {
+          "id": "chatgpt",
+          "commits": 13
+        },
+        {
+          "id": "codex",
+          "commits": 4
+        },
+        {
+          "id": "gemini",
+          "commits": 1
+        },
+        {
+          "id": "other",
+          "commits": 1
+        }
+      ]
+    },
+    {
+      "repo": "anthropics/claude-code",
+      "abv": 5.01,
+      "style": "lager",
+      "commits": 579,
+      "aiCommits": 29,
+      "botCommits": 376,
+      "authored": 15,
+      "topTool": "claude",
+      "tools": [
+        {
+          "id": "claude",
+          "commits": 29
+        }
+      ]
+    },
+    {
+      "repo": "excalidraw/excalidraw",
+      "abv": 4.88,
+      "style": "lager",
+      "commits": 287,
+      "aiCommits": 14,
+      "botCommits": 7,
+      "authored": 0,
+      "topTool": "claude",
+      "tools": [
+        {
+          "id": "claude",
+          "commits": 11
+        },
+        {
+          "id": "copilot",
+          "commits": 2
+        },
+        {
+          "id": "cursor",
+          "commits": 1
+        }
+      ]
+    },
+    {
+      "repo": "google-gemini/gemini-cli",
+      "abv": 4.65,
+      "style": "lager",
+      "commits": 3357,
+      "aiCommits": 156,
+      "botCommits": 179,
+      "authored": 3,
+      "topTool": "gemini",
+      "tools": [
+        {
+          "id": "gemini",
+          "commits": 153
+        },
+        {
+          "id": "jules",
+          "commits": 3
+        }
+      ]
+    },
+    {
+      "repo": "astral-sh/uv",
+      "abv": 4.43,
+      "style": "lager",
+      "commits": 3568,
+      "aiCommits": 158,
+      "botCommits": 1166,
+      "authored": 0,
+      "topTool": "claude",
+      "tools": [
+        {
+          "id": "claude",
+          "commits": 147
+        },
+        {
+          "id": "codex",
+          "commits": 10
+        },
+        {
+          "id": "copilot",
+          "commits": 1
+        }
+      ]
+    },
+    {
+      "repo": "vitejs/vite",
+      "abv": 3.38,
+      "style": "lager",
+      "commits": 1213,
+      "aiCommits": 41,
+      "botCommits": 162,
+      "authored": 15,
+      "topTool": "copilot",
+      "tools": [
+        {
+          "id": "copilot",
+          "commits": 20
+        },
+        {
+          "id": "claude",
+          "commits": 15.5
+        },
+        {
+          "id": "codex",
+          "commits": 4.5
+        },
+        {
+          "id": "cursor",
+          "commits": 1
+        }
+      ]
+    },
+    {
+      "repo": "openai/codex",
+      "abv": 3.12,
+      "style": "lager",
+      "commits": 11466,
+      "aiCommits": 358,
+      "botCommits": 86,
+      "authored": 0,
+      "topTool": "codex",
+      "tools": [
+        {
+          "id": "codex",
+          "commits": 348
+        },
+        {
+          "id": "claude",
+          "commits": 7
+        },
+        {
+          "id": "copilot",
+          "commits": 3
+        }
+      ]
+    },
+    {
+      "repo": "sveltejs/svelte",
+      "abv": 3,
+      "style": "shandy",
+      "commits": 767,
+      "aiCommits": 23,
+      "botCommits": 116,
+      "authored": 1,
+      "topTool": "claude",
+      "tools": [
+        {
+          "id": "claude",
+          "commits": 18
+        },
+        {
+          "id": "copilot",
+          "commits": 3
+        },
+        {
+          "id": "codex",
+          "commits": 2
+        }
+      ]
+    },
+    {
+      "repo": "ghostty-org/ghostty",
+      "abv": 2.74,
+      "style": "shandy",
+      "commits": 4126,
+      "aiCommits": 113,
+      "botCommits": 459,
+      "authored": 13,
+      "topTool": "claude",
+      "tools": [
+        {
+          "id": "claude",
+          "commits": 91
+        },
+        {
+          "id": "cursor",
+          "commits": 10
+        },
+        {
+          "id": "amp",
+          "commits": 9
+        },
+        {
+          "id": "chatgpt",
+          "commits": 1
+        },
+        {
+          "id": "codex",
+          "commits": 1
+        },
+        {
+          "id": "copilot",
+          "commits": 1
+        }
+      ]
+    },
+    {
+      "repo": "zed-industries/zed",
+      "abv": 2.18,
+      "style": "shandy",
+      "commits": 8152,
+      "aiCommits": 178,
+      "botCommits": 59,
+      "authored": 1,
+      "topTool": "claude",
+      "tools": [
+        {
+          "id": "claude",
+          "commits": 128.5
+        },
+        {
+          "id": "amp",
+          "commits": 25
+        },
+        {
+          "id": "droid",
+          "commits": 10.5
+        },
+        {
+          "id": "copilot",
+          "commits": 8
+        },
+        {
+          "id": "cursor",
+          "commits": 3
+        },
+        {
+          "id": "codex",
+          "commits": 2
+        },
+        {
+          "id": "other",
+          "commits": 1
+        }
+      ]
+    },
+    {
+      "repo": "neovim/neovim",
+      "abv": 1.54,
+      "style": "shandy",
+      "commits": 3906,
+      "aiCommits": 60,
+      "botCommits": 112,
+      "authored": 0,
+      "topTool": "claude",
+      "tools": [
+        {
+          "id": "claude",
+          "commits": 56
+        },
+        {
+          "id": "gemini",
+          "commits": 2
+        },
+        {
+          "id": "codex",
+          "commits": 1
+        },
+        {
+          "id": "other",
+          "commits": 1
+        }
+      ]
+    },
+    {
+      "repo": "astral-sh/ruff",
+      "abv": 1.49,
+      "style": "shandy",
+      "commits": 5317,
+      "aiCommits": 79,
+      "botCommits": 741,
+      "authored": 0,
+      "topTool": "claude",
+      "tools": [
+        {
+          "id": "claude",
+          "commits": 68.5
+        },
+        {
+          "id": "codex",
+          "commits": 10
+        },
+        {
+          "id": "copilot",
+          "commits": 0.5
+        }
+      ]
+    },
+    {
+      "repo": "withastro/astro",
+      "abv": 1.29,
+      "style": "shandy",
+      "commits": 2334,
+      "aiCommits": 30,
+      "botCommits": 352,
+      "authored": 1,
+      "topTool": "claude",
+      "tools": [
+        {
+          "id": "claude",
+          "commits": 22.5
+        },
+        {
+          "id": "copilot",
+          "commits": 7.5
+        }
+      ]
+    },
+    {
+      "repo": "golang/go",
+      "abv": 0.54,
+      "style": "shandy",
+      "commits": 3873,
+      "aiCommits": 21,
+      "botCommits": 4,
+      "authored": 0,
+      "topTool": "claude",
+      "tools": [
+        {
+          "id": "claude",
+          "commits": 11
+        },
+        {
+          "id": "other",
+          "commits": 6
+        },
+        {
+          "id": "copilot",
+          "commits": 4
+        }
+      ]
+    },
+    {
+      "repo": "ollama/ollama",
+      "abv": 0.33,
+      "style": "kombucha",
+      "commits": 1195,
+      "aiCommits": 4,
+      "botCommits": 0,
+      "authored": 0,
+      "topTool": "claude",
+      "tools": [
+        {
+          "id": "claude",
+          "commits": 2
+        },
+        {
+          "id": "codex",
+          "commits": 1
+        },
+        {
+          "id": "copilot",
+          "commits": 1
+        }
+      ]
+    },
+    {
+      "repo": "kubernetes/kubernetes",
+      "abv": 0.17,
+      "style": "kombucha",
+      "commits": 5819,
+      "aiCommits": 10,
+      "botCommits": 86,
+      "authored": 1,
+      "topTool": "claude",
+      "tools": [
+        {
+          "id": "claude",
+          "commits": 7
+        },
+        {
+          "id": "cursor",
+          "commits": 2
+        },
+        {
+          "id": "copilot",
+          "commits": 1
+        }
+      ]
+    },
+    {
+      "repo": "fastapi/fastapi",
+      "abv": 0.16,
+      "style": "kombucha",
+      "commits": 1832,
+      "aiCommits": 3,
+      "botCommits": 1080,
+      "authored": 0,
+      "topTool": "claude",
+      "tools": [
+        {
+          "id": "claude",
+          "commits": 1
+        },
+        {
+          "id": "copilot",
+          "commits": 1
+        },
+        {
+          "id": "cursor",
+          "commits": 1
+        }
+      ]
+    },
+    {
+      "repo": "rust-lang/rust",
+      "abv": 0.06,
+      "style": "kombucha",
+      "commits": 22181,
+      "aiCommits": 14,
+      "botCommits": 206,
+      "authored": 0,
+      "topTool": "claude",
+      "tools": [
+        {
+          "id": "claude",
+          "commits": 9
+        },
+        {
+          "id": "codex",
+          "commits": 2
+        },
+        {
+          "id": "copilot",
+          "commits": 2
+        },
+        {
+          "id": "chatgpt",
+          "commits": 1
+        }
+      ]
+    },
+    {
+      "repo": "curl/curl",
+      "abv": 0.06,
+      "style": "kombucha",
+      "commits": 3602,
+      "aiCommits": 2,
+      "botCommits": 132,
+      "authored": 1,
+      "topTool": "claude",
+      "tools": [
+        {
+          "id": "claude",
+          "commits": 1
+        },
+        {
+          "id": "copilot",
+          "commits": 1
+        }
+      ]
+    },
+    {
+      "repo": "ladybirdbrowser/ladybird",
+      "abv": 0.02,
+      "style": "kombucha",
+      "commits": 20620,
+      "aiCommits": 5,
+      "botCommits": 36,
+      "authored": 0,
+      "topTool": "claude",
+      "tools": [
+        {
+          "id": "claude",
+          "commits": 5
+        }
+      ]
+    },
+    {
+      "repo": "django/django",
+      "abv": 0,
+      "style": "alcohol-free",
+      "commits": 1086,
+      "aiCommits": 0,
+      "botCommits": 0,
+      "authored": 0,
+      "topTool": null,
+      "tools": []
+    },
+    {
+      "repo": "godotengine/godot",
+      "abv": 0,
+      "style": "alcohol-free",
+      "commits": 4088,
+      "aiCommits": 0,
+      "botCommits": 1,
+      "authored": 0,
+      "topTool": null,
+      "tools": []
+    },
+    {
+      "repo": "vuejs/core",
+      "abv": 0,
+      "style": "alcohol-free",
+      "commits": 445,
+      "aiCommits": 0,
+      "botCommits": 133,
+      "authored": 0,
+      "topTool": null,
+      "tools": []
+    }
+  ]
+}

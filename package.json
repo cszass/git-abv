@@ -1,0 +1,48 @@
+{
+  "name": "git-abv",
+  "version": "0.1.0",
+  "description": "AI By Volume: measure how much of any git repo was written with AI. One command, zero dependencies, nothing leaves your machine.",
+  "keywords": [
+    "git",
+    "ai",
+    "cli",
+    "statistics",
+    "co-authored-by",
+    "claude",
+    "copilot",
+    "cursor",
+    "codex",
+    "vibe-coding",
+    "badge",
+    "abv"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "git-abv": "bin/git-abv.js",
+    "abv": "bin/git-abv.js"
+  },
+  "exports": {
+    ".": "./src/index.js",
+    "./signatures": "./src/core/signatures.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "README.md",
+    "README.zh-CN.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node scripts/make-demo-repo.mjs && node bin/git-abv.js .demo/moonshine",
+    "web": "node scripts/serve.mjs docs",
+    "sync:web": "node scripts/sync-web.mjs",
+    "signatures:md": "node scripts/gen-signatures-md.mjs",
+    "assets": "node scripts/gen-assets.mjs",
+    "top-shelf": "node scripts/top-shelf.mjs && node scripts/readme-shelf.mjs"
+  }
+}

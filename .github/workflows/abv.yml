@@ -1,0 +1,28 @@
+# Dogfood: keep this repository's own badge and label fresh.
+# Copy this file into your project and change `uses: ./` to the published action.
+name: ABV
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: abv-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  abv:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0 # the whole history, or the number is meaningless
+      - uses: ./
+        with:
+          badge: abv-badge.svg
+          card: abv-label.svg
+          commit: true

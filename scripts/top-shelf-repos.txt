@@ -1,0 +1,58 @@
+# Repositories measured for "the top shelf". One owner/repo per line.
+# Chosen for being widely known, not for their results. Add yours with a PR.
+
+# Runtimes, languages, kernels
+torvalds/linux
+python/cpython
+nodejs/node
+golang/go
+rust-lang/rust
+oven-sh/bun
+denoland/deno
+microsoft/TypeScript
+dotnet/runtime
+
+# Frameworks and libraries
+react/react
+vercel/next.js
+vuejs/core
+sveltejs/svelte
+withastro/astro
+vitejs/vite
+tailwindlabs/tailwindcss
+django/django
+rails/rails
+fastapi/fastapi
+pytorch/pytorch
+huggingface/transformers
+langchain-ai/langchain
+
+# Tools and infrastructure
+microsoft/vscode
+zed-industries/zed
+neovim/neovim
+ghostty-org/ghostty
+curl/curl
+astral-sh/uv
+astral-sh/ruff
+kubernetes/kubernetes
+home-assistant/core
+supabase/supabase
+n8n-io/n8n
+ollama/ollama
+godotengine/godot
+ladybirdbrowser/ladybird
+excalidraw/excalidraw
+tldraw/tldraw
+cloudflare/workers-sdk
+
+# AI coding tools, measuring themselves
+openai/codex
+anthropics/claude-code
+google-gemini/gemini-cli
+anomalyco/opencode
+cline/cline
+Aider-AI/aider
+OpenHands/OpenHands
+continuedev/continue
+aaif-goose/goose

@@ -1,0 +1,12 @@
+node_modules/
+.demo/
+.claude/
+*.log
+.DS_Store
+
+# Output of running the CLI in this folder by hand. The repo's own badge and label
+# (abv-badge.svg, abv-label.svg) are committed on purpose.
+/abv-*.json
+
+# Local notes for the maintainer, not for the repo.
+/LAUNCH.md
